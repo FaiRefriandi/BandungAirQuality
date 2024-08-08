@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Fa'i Refriandi - 10121079 -->
+    <!-- PemAndro3 - 09/06/2024 -->
+    <!-- Tugas Besar UTS -->
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/wkwk</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.BottomNavigation" parent="AppTheme" />
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#D3E3FD</item>
+    </style>
+
+    <style name="BottomNavigationViewTextStyle" parent="TextAppearance.AppCompat.Medium">
+        <item name="fontFamily">@font/medium</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BottomNavigationViewTheme" parent="Theme.MaterialComponents.Light">
+        <item name="bottomNavigationStyle">@style/BottomNavigationViewTextStyle</item>
+    </style>
+</resources>

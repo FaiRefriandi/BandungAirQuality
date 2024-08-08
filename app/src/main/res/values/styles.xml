@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fa'i Refriandi - 10121079 -->
+<!-- PemAndro3 - 08/08/2024 -->
+<!-- Tugas Besar UAS -->
+<resources>
+    <style name="RoundImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

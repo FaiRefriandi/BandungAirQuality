@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fa'i Refriandi - 10121079 -->
+<!-- PemAndro3 - 09/06/2024 -->
+<!-- Tugas Besar UTS -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/splashFragment2">
+
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.froztlass.airquality.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment2_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment2_to_homeFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment2_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.froztlass.airquality.onboarding.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_homeFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/viewPagerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.froztlass.airquality.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.froztlass.airquality.onboarding.screens.ThirdScreen"
+        android:label="ThirdFragment"
+        tools:layout="@layout/fragment_third_screen">
+        <action
+            android:id="@+id/action_thirdFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.froztlass.airquality.onboarding.screens.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+    </fragment>
+
+</navigation>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "902181126551",
+    "project_id": "airquality-3101",
+    "storage_bucket": "airquality-3101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902181126551:android:42156fc5e40bc23a7384d2",
+        "android_client_info": {
+          "package_name": "com.froztlass.airquality"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902181126551-cta77qq537u1tdbu1tdkabj1f21oc3gd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.froztlass.airquality",
+            "certificate_hash": "a331dff027118a4f58f02494a1dc677c4f95eae6"
+          }
+        },
+        {
+          "client_id": "902181126551-k9707t8bv5ljv4li2250grfjks526j8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiTfiDzPLRjkH-5ygzLszZtlrrL3Um38E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902181126551-k9707t8bv5ljv4li2250grfjks526j8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

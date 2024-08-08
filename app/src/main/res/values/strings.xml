@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BAQ</string>
+    <string name="default_web_client_id">902181126551-cta77qq537u1tdbu1tdkabj1f21oc3gd.apps.googleusercontent.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#FF000000</color>
+    <color name="dark">#FFFFFFFF</color>
+    <color name="wkwk">#212121</color>
+    <color name="hampirdark">#37474f</color>
+    <color name="udahdark">#b0bec5</color>
+    <color name="ijogelap">#80cbc4</color>
+    <color name="ijoterang">#b2dfdb</color>
+    <color name="lgray">#e0f2f1</color>
+    <color name="bluetak">#d3e3fd</color>
+
+</resources>
