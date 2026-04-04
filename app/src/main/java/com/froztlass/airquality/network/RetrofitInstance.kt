@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
     private const val BASE_URL = "https://api.airvisual.com/v2/"
-    const val API_KEY ="03a9e2a3-42ec-43b0-b852-2958a861153f"
+    const val API_KEY ="9e2529aa-9cd9-4c80-bbd9-c730fa762ad9"
 
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()

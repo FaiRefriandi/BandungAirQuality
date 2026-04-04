@@ -2,7 +2,7 @@
   "project_info": {
     "project_number": "902181126551",
     "project_id": "airquality-3101",
-    "storage_bucket": "airquality-3101.appspot.com"
+    "storage_bucket": "airquality-3101.firebasestorage.app"
   },
   "client": [
     {
@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "902181126551-cta77qq537u1tdbu1tdkabj1f21oc3gd.apps.googleusercontent.com",
+          "client_id": "902181126551-trr5g73dgu7h6gq8g364c44aa0bi70ad.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.froztlass.airquality",

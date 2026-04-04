@@ -1,64 +1,440 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_all"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_all"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     tools:context=".HomeFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_sambutan"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        app:cardBackgroundColor="@color/white"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:paddingRight="10dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="100dp">
 
+        <!-- ===== GREETING SECTION ===== -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_sambutan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/medium"
+                    android:text="Good Morning!"
+                    android:textColor="#1b6ef3"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_location_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="@font/nutito_regular"
+                        android:text="Bandung, West Java"
+                        android:textColor="#1b6ef3"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ===== MAIN AQI CARD ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_glass"
+            android:elevation="6dp"
+            android:outlineProvider="background"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="24dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nutito_medium"
+                android:text="Kualitas Udara"
+                android:textColor="#78909C"
+                android:textSize="13sp"
+                android:letterSpacing="0.15" />
+
+            <!-- AQI Circle -->
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="12dp">
+
+                <View
+                    android:id="@+id/aqi_circle_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_aqi_circle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_aqi_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="--"
+                        android:textColor="#1b6ef3"
+                        android:textSize="48sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nutito_regular"
+                        android:text="AQI"
+                        android:textColor="#78909C"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tv_aqi_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_status_pill"
+                android:fontFamily="@font/nutito_medium"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="Memuat..."
+                android:textColor="#69F0AE"
+                android:textSize="14sp" />
+
+            <!-- AQI Description -->
+            <TextView
+                android:id="@+id/tv_aqi_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nutito_regular"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Menunggu data..."
+                android:textColor="#90CAF9"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- ===== WEATHER DETAILS GRID ===== -->
         <TextView
-            android:id="@+id/tv_sambutan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/nutito_medium"
+            android:text="Detail Cuaca"
+            android:textColor="#546E7A"
+            android:textSize="14sp"
+            android:letterSpacing="0.1" />
+
+        <!-- Row 1: Temperature & Humidity -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_marginBottom="16dp">
+
+            <!-- Temperature Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_glass_small"
+                android:elevation="4dp"
+                android:outlineProvider="background"
+                android:gravity="center"
+                android:layout_marginEnd="6dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🌡️"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tv_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/medium"
+                    android:text="--°C"
+                    android:textColor="#1b6ef3"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nutito_regular"
+                    android:text="Temperatur"
+                    android:textColor="#78909C"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Humidity Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_glass_small"
+                android:elevation="4dp"
+                android:outlineProvider="background"
+                android:gravity="center"
+                android:layout_marginStart="6dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💧"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tv_humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/medium"
+                    android:text="--%"
+                    android:textColor="#1b6ef3"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nutito_regular"
+                    android:text="Kelembapan"
+                    android:textColor="#78909C"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2: Wind Speed & Pressure -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_marginBottom="16dp">
+
+            <!-- Wind Speed Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_glass_small"
+                android:elevation="4dp"
+                android:outlineProvider="background"
+                android:gravity="center"
+                android:layout_marginEnd="6dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💨"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tv_wind_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/medium"
+                    android:text="-- m/s"
+                    android:textColor="#1b6ef3"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nutito_regular"
+                    android:text="Kec. Angin"
+                    android:textColor="#78909C"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Pressure Card -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_glass_small"
+                android:elevation="4dp"
+                android:outlineProvider="background"
+                android:gravity="center"
+                android:layout_marginStart="6dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔵"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tv_pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/medium"
+                    android:text="-- hPa"
+                    android:textColor="#1b6ef3"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nutito_regular"
+                    android:text="Tekanan Udara"
+                    android:textColor="#78909C"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== POLLUTANT INFO CARD ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_glass_small"
+            android:elevation="4dp"
+            android:outlineProvider="background"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nutito_medium"
+                android:text="Polutan Utama"
+                android:textColor="#1b6ef3"
+                android:textSize="13sp"
+                android:letterSpacing="0.1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_pollutant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/medium"
+                        android:text="PM2.5"
+                        android:textColor="#1b6ef3"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_pollutant_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/nutito_regular"
+                        android:text="Partikel halus berbahaya bagi pernapasan"
+                        android:textColor="#78909C"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== LAST UPDATED ===== -->
+        <TextView
+            android:id="@+id/tv_last_updated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/medium"
-            android:padding="16dp"
-            android:text="Good Morning, Fai Refriandi!"
-            android:textColor="#1b6ef3"
-            android:textSize="17sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nutito_regular"
+            android:text="Terakhir diperbarui: --"
+            android:textColor="#546E7A"
+            android:textSize="11sp" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_city_data"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:cardBackgroundColor="@color/white"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:padding="16dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_sambutan">
-
-        <TextView
-            android:id="@+id/tv_city"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data"
-            android:fontFamily="@font/open_regular"
-            android:padding="15dp"
-            android:textColor="#000000"
-            android:textSize="12sp"/>
-    </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

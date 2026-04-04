@@ -12,4 +12,17 @@
     <color name="lgray">#e0f2f1</color>
     <color name="bluetak">#d3e3fd</color>
 
+    <!-- Home Redesign Colors -->
+    <color name="home_bg_start">#1A237E</color>
+    <color name="home_bg_center">#283593</color>
+    <color name="home_bg_end">#1565C0</color>
+    <color name="aqi_good">#69F0AE</color>
+    <color name="aqi_moderate">#FFD54F</color>
+    <color name="aqi_unhealthy_sensitive">#FF8A65</color>
+    <color name="aqi_unhealthy">#EF5350</color>
+    <color name="aqi_very_unhealthy">#AB47BC</color>
+    <color name="aqi_hazardous">#B71C1C</color>
+    <color name="text_light_secondary">#90CAF9</color>
+    <color name="text_muted">#78909C</color>
+
 </resources>

@@ -32,10 +32,9 @@ data class Pollution(
 
 data class Weather(
     val ts: String, // Timestamp in ISO 8601 format
-    val tp: Int, // Temperature in Celsius
+    val tp: Int, // Temperature
     val pr: Int, // Atmospheric pressure in hPa
     val hu: Int, // Humidity percentage
     val ws: Double, // Wind speed in m/s
     val wd: Int, // Wind direction in degrees
-    val ic: String? // Weather icon code
 )
