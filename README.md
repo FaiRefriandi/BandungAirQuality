@@ -3,9 +3,12 @@
 Bandung Air Quality is a simple Android application that retrieves and displays real-time air quality information for the Bandung area. The app fetches data from an external API and presents it in a clean and easy-to-read interface.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1317efb7-ad83-4a5f-95e0-8c2d993b57d7" width="250" />
-  <img src="https://github.com/user-attachments/assets/3a6f56a3-21fa-435d-9a5a-200a5865e86c" width="250" />
-  <img src="https://github.com/user-attachments/assets/e06159b1-cece-4440-90b5-2c20d62eb38d" width="250" />
+  <img src="https://github.com/user-attachments/assets/ba2299fa-5eef-48f1-bc41-9227a03e661f" width="250" />
+  <img src="https://github.com/user-attachments/assets/a9800f53-e9d2-4909-8264-4ac044de6314" width="250" />
+  <img src="https://github.com/user-attachments/assets/33fbadc5-4ffd-4e3a-be13-fc4ab824e518" width="250" />
+  <img src="https://github.com/user-attachments/assets/9ba2019a-92c8-465d-907c-96de8c7677c5" width="250"/>
+
+
 </p>
 
 ---
